@@ -1,15 +1,31 @@
-import InputGroup from "./InputGroup";
+import InputGroup from './InputGroup';
 
-const UserInput = () => {
+const UserInput = ({inputObject, onChange}) => {
     return (
         <section id="user-input">
             <div className="input-group">
-                <InputGroup inputTitle={"INITIAL INVESTMENT"} />
-                <InputGroup inputTitle={"ANNUAL INVESTMENT"} />
+                <InputGroup
+                    inputTitle={"inital Investment"}
+                    inputValue={inputObject.initalInvestment}
+                    onInputChange={onChange}
+                />
+                <InputGroup
+                    inputTitle={"annual Investment"}
+                    inputValue={inputObject.annualInvestment}
+                    onInputChange={onChange}
+                />
             </div>
             <div className="input-group">
-                <InputGroup inputTitle={"EXPECTED RETURN"} />
-                <InputGroup inputTitle={"DURATION"} />
+                <InputGroup
+                    inputTitle={"expected Return"}
+                    inputValue={inputObject.expectedReturn}
+                    onInputChange={onChange}
+                />
+                <InputGroup
+                    inputTitle={"duration"}
+                    inputValue={inputObject.duration}
+                    onInputChange={onChange}
+                />
             </div>
         </section>
     );
