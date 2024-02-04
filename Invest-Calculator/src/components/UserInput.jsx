@@ -5,8 +5,8 @@ const UserInput = ({inputObject, onChange}) => {
         <section id="user-input">
             <div className="input-group">
                 <InputGroup
-                    inputTitle={"inital Investment"}
-                    inputValue={inputObject.initalInvestment}
+                    inputTitle={"initial Investment"}
+                    inputValue={inputObject.initialInvestment}
                     onInputChange={onChange}
                 />
                 <InputGroup

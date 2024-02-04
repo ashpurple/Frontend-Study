@@ -4,7 +4,7 @@ import Result from "./components/Result";
 import { useState } from 'react';
 
 const INITIAL_VALUE = {
-  initalInvestment: 15000,
+  initialInvestment: 15000,
   annualInvestment: 1200,
   expectedReturn: 6,
   duration: 10
@@ -17,10 +17,9 @@ function App() {
     setInvestmentValue((prevValue) => {
           return {
               ...prevValue,
-              [inputTitle]: newValue
+              [inputTitle]: +newValue
           };
       });
-      console.log(investmentValue);
   };
 
   return (
