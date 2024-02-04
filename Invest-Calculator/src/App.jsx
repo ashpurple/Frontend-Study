@@ -13,13 +13,15 @@ const INITIAL_VALUE = {
 function App() {
   const [investmentValue, setInvestmentValue] = useState(INITIAL_VALUE);
 
+  const inputIsValid = investmentValue.duration >= 1;
+
   const handleInvestmentChange = (inputTitle, newValue) => {
     setInvestmentValue((prevValue) => {
-          return {
-              ...prevValue,
-              [inputTitle]: +newValue
-          };
-      });
+      return {
+        ...prevValue,
+        [inputTitle]: +newValue
+      };
+    });
   };
 
   return (
@@ -29,9 +31,11 @@ function App() {
         inputObject={investmentValue}
         onChange={handleInvestmentChange}
       />
-      <Result 
-        resultInput={investmentValue}
-      />
+      {inputIsValid
+        ? <Result resultInput={investmentValue} />
+        : <p className="center">Please enter a duration greater than zero.</p>
+      }
+
     </>
   )
 }
